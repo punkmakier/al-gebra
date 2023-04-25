@@ -12,11 +12,12 @@ class DisplayPostTest extends config{
         $countQuestion = 1;
 
         if($sqlQ->rowCount() > 0){
+            $count = 1;
             while($row = $sqlQ->fetch()){
                 $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt'");
                 $sqlCheck->execute();
                 if($sqlCheck->rowCount() == 0){
-                    echo "<form id='submitExamFormConcept1$countQuestion'>
+                    echo "<form id='submitExamFormConcept1$count'>
                     <div class='card'>
                     <div class='card-header d-flex justify-content-between'><h5>Random Concept</h5><span>Question #: $countQuestion</span></div>
                         <div class='card-body'>
@@ -79,6 +80,7 @@ class DisplayPostTest extends config{
                 }
 
                 $countQuestion++;
+                $count++;
                 
             }
         }
@@ -88,11 +90,13 @@ class DisplayPostTest extends config{
         $sqlQ->execute();
 
         if($sqlQ->rowCount() > 0){
+            $count = 1;
+
             while($row = $sqlQ->fetch()){
                 $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt'");
                 $sqlCheck->execute();
                 if($sqlCheck->rowCount() == 0){
-                    echo "<form id='submitExamFormConcept1$countQuestion'>
+                    echo "<form id='submitExamFormConcept2$count'>
                     <div class='card'>
                     <div class='card-header d-flex justify-content-between'><h5>Random Concept</h5><span>Question #: $countQuestion</span></div>
                         <div class='card-body'>
@@ -145,7 +149,7 @@ class DisplayPostTest extends config{
                             </div>
                             <div class='col-3 mt-1'>
                                 <div class='mb-3 mt-3'>
-                                    <input type='button' class='btn btn-success w-100 mb-5' id='submitTestFormConcept1$countQuestion' value='Submit'>
+                                    <input type='button' class='btn btn-success w-100 mb-5' id='submitTestFormConcept2$count' value='Submit'>
                                 </div>
                             </div>
                         </div>
@@ -155,6 +159,7 @@ class DisplayPostTest extends config{
                 }
 
                 $countQuestion++;
+                $count++;
                 
             }
         }
@@ -162,11 +167,12 @@ class DisplayPostTest extends config{
         $sqlQ->execute();
 
         if($sqlQ->rowCount() > 0){
+            $count = 1;
             while($row = $sqlQ->fetch()){
                 $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt'");
                 $sqlCheck->execute();
                 if($sqlCheck->rowCount() == 0){
-                    echo "<form id='submitExamFormConcept1$countQuestion'>
+                    echo "<form id='submitExamFormConcept3$count'>
                     <div class='card'>
                     <div class='card-header d-flex justify-content-between'><h5>Random Concept</h5><span>Question #: $countQuestion</span></div>
                         <div class='card-body'>
@@ -219,7 +225,7 @@ class DisplayPostTest extends config{
                             </div>
                             <div class='col-3 mt-1'>
                                 <div class='mb-3 mt-3'>
-                                    <input type='button' class='btn btn-success w-100 mb-5' id='submitTestFormConcept1$countQuestion' value='Submit'>
+                                    <input type='button' class='btn btn-success w-100 mb-5' id='submitTestFormConcept3$count' value='Submit'>
                                 </div>
                             </div>
                         </div>
@@ -229,7 +235,7 @@ class DisplayPostTest extends config{
                 }
 
                 $countQuestion++;
-                
+                $count++;
             }
         }
 
@@ -237,11 +243,12 @@ class DisplayPostTest extends config{
         $sqlQ->execute();
 
         if($sqlQ->rowCount() > 0){
+            $count = 1;
             while($row = $sqlQ->fetch()){
                 $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt'");
                 $sqlCheck->execute();
                 if($sqlCheck->rowCount() == 0){
-                    echo "<form id='submitExamFormConcept1$countQuestion'>
+                    echo "<form id='submitExamFormConcept4$count'>
                     <div class='card'>
                     <div class='card-header d-flex justify-content-between'><h5>Random Concept</h5><span>Question #: $countQuestion</span></div>
                         <div class='card-body'>
@@ -294,7 +301,7 @@ class DisplayPostTest extends config{
                             </div>
                             <div class='col-3 mt-1'>
                                 <div class='mb-3 mt-3'>
-                                    <input type='button' class='btn btn-success w-100 mb-5' id='submitTestFormConcept1$countQuestion' value='Submit'>
+                                    <input type='button' class='btn btn-success w-100 mb-5' id='submitTestFormConcept4$count' value='Submit'>
                                 </div>
                             </div>
                         </div>
@@ -304,6 +311,7 @@ class DisplayPostTest extends config{
                 }
 
                 $countQuestion++;
+                $count++;
                 
             }
         }
@@ -312,11 +320,12 @@ class DisplayPostTest extends config{
         $sqlQ->execute();
 
         if($sqlQ->rowCount() > 0){
+            $count = 1;
             while($row = $sqlQ->fetch()){
                 $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt'");
                 $sqlCheck->execute();
                 if($sqlCheck->rowCount() == 0){
-                    echo "<form id='submitExamFormConcept1$countQuestion'>
+                    echo "<form id='submitExamFormConcept5$count'>
                     <div class='card'>
                     <div class='card-header d-flex justify-content-between'><h5>Random Concept</h5><span>Question #: $countQuestion</span></div>
                         <div class='card-body'>
@@ -369,7 +378,7 @@ class DisplayPostTest extends config{
                             </div>
                             <div class='col-3 mt-1'>
                                 <div class='mb-3 mt-3'>
-                                    <input type='button' class='btn btn-success w-100 mb-5' id='submitTestFormConcept1$countQuestion' value='Submit'>
+                                    <input type='button' class='btn btn-success w-100 mb-5' id='submitTestFormConcept5$count' value='Submit'>
                                 </div>
                             </div>
                         </div>
@@ -379,7 +388,7 @@ class DisplayPostTest extends config{
                 }
 
                 $countQuestion++;
-                
+                $count++;
             }
         }
 

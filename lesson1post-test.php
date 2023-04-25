@@ -10,6 +10,8 @@
     $pretest = new ShowPretest();
     $UserID = $_SESSION['UserID'];
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -64,15 +66,14 @@
                                 </div>
                                 
                                 <div class="container-fluid mt-3">            
-
-                                    <?php $checkpoint = $displayCheckpoint->checkAttempt($UserID);
+                                     <?php $checkpoint = $displayCheckpoint->checkAttempt($UserID);
                                         if($checkpoint == 1){
                                            $displayQuestions->showTestExam("PostTest",1,$UserID,2);
                                         }else{
                                            $displayQuestions->showTestExam("PostTest",1,$UserID,1);
                                         }
-                                    
                                     ?>
+                                </div>
 
                                 </div>
                                

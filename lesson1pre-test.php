@@ -3,10 +3,14 @@
     require_once 'Model/UserInfo.php';
     require_once 'Model/ShowPretest.php';
     require_once 'Model/DisplayQuestions.php';
+    require_once 'Model/DisplayCheckpoint.php';
+    $displayCheckpoint = new DisplayCheckpoint;
     $userinfo = new UserInfo();
     $displayQuestions = new DisplayQuestions();
     $pretest = new ShowPretest();
     $UserID = $_SESSION['UserID'];
+
+
 
 ?>
 
@@ -63,8 +67,13 @@
                                 </div>
                                 
                                 <div class="container-fluid mt-3">            
-                                    <?php $displayQuestions->showTestExam("PreTest",1,$UserID); ?>
-
+                                <?php $checkpoint = $displayCheckpoint->checkAttempt($UserID);
+                                        if($checkpoint == 1){
+                                           $displayQuestions->showTestExam("PreTest",1,$UserID,2);
+                                        }else{
+                                           $displayQuestions->showTestExam("PreTest",1,$UserID,1);
+                                        }
+                                    ?>
                                 </div>
                                
                             

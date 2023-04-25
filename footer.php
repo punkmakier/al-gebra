@@ -510,6 +510,17 @@
                     'You got the answer',
                     'success'
                     )
+                    $.ajax({
+                        type: "POST",
+                        url: "Controller/ScoreChecker.php",
+                        data: formData,
+                        success: function(response){
+                            alert(response);
+                            if(response == "YouPassed"){
+                                sweetAlertMessages('Passed Exam',"Congratulations, you passed the exam.",'success');
+                            }
+                        }
+                    })
                 }else{
                     $("#submitExamFormConcept32").hide();
                     Swal.fire(
@@ -517,6 +528,19 @@
                     'You got the wrong answer',
                     'error'
                     )
+                    $.ajax({
+                        type: "POST",
+                        url: "Controller/ScoreChecker.php",
+                        data: formData,
+                        success: function(response){
+                            if(response == "FailedExam1"){
+                                sweetAlertMessages('Failed Exam',"You have failed on exam, you still have 1 attempt to take the exam",'error');
+                            }
+                            else if(response == "FailedExam2"){
+                                sweetAlertMessages('Failed Exam',"You have failed on exam. Please proceed directly to next lesson.",'error');
+                            }
+                        }
+                    })
                 }
             }
         })
@@ -560,6 +584,8 @@
                     'You got the answer',
                     'success'
                     )
+                    
+                    
                 }else{
                     $("#submitExamFormConcept34").hide();
                     Swal.fire(
@@ -567,6 +593,7 @@
                     'You got the wrong answer',
                     'error'
                     )
+                    
                 }
             }
         })
@@ -635,6 +662,17 @@
                     'You got the answer',
                     'success'
                     )
+                    $.ajax({
+                        type: "POST",
+                        url: "Controller/ScoreChecker.php",
+                        data: formData,
+                        success: function(response){
+                            alert(response);
+                            if(response == "YouPassed"){
+                                sweetAlertMessages('Passed Exam',"Congratulations, you passed the exam.",'success');
+                            }
+                        }
+                    })
                 }else{
                     $("#submitExamFormConcept43").hide();
                     Swal.fire(
@@ -642,6 +680,19 @@
                     'You got the wrong answer',
                     'error'
                     )
+                    $.ajax({
+                        type: "POST",
+                        url: "Controller/ScoreChecker.php",
+                        data: formData,
+                        success: function(response){
+                            if(response == "FailedExam1"){
+                                sweetAlertMessages('Failed Exam',"You have failed on exam, you still have 1 attempt to take the exam",'error');
+                            }
+                            else if(response == "FailedExam2"){
+                                sweetAlertMessages('Failed Exam',"You have failed on exam. Please proceed directly to next lesson.",'error');
+                            }
+                        }
+                    })
                 }
             }
         })
@@ -760,6 +811,17 @@
                     'You got the answer',
                     'success'
                     )
+                    $.ajax({
+                        type: "POST",
+                        url: "Controller/ScoreChecker.php",
+                        data: formData,
+                        success: function(response){
+                            alert(response);
+                            if(response == "YouPassed"){
+                                sweetAlertMessages('Passed Exam',"Congratulations, you passed the exam.",'success');
+                            }
+                        }
+                    })
                 }else{
                     $("#submitExamFormConcept54").hide();
                     Swal.fire(
@@ -767,6 +829,19 @@
                     'You got the wrong answer',
                     'error'
                     )
+                    $.ajax({
+                        type: "POST",
+                        url: "Controller/ScoreChecker.php",
+                        data: formData,
+                        success: function(response){
+                            if(response == "FailedExam1"){
+                                sweetAlertMessages('Failed Exam',"You have failed on exam, you still have 1 attempt to take the exam",'error');
+                            }
+                            else if(response == "FailedExam2"){
+                                sweetAlertMessages('Failed Exam',"You have failed on exam. Please proceed directly to next lesson.",'error');
+                            }
+                        }
+                    })
                 }
             }
         })
@@ -928,6 +1003,25 @@
 
 
 
+
+    function sweetAlertMessages(title,body,icon){
+
+            Swal.fire({
+            title: title,
+            text: body,
+            icon: icon,
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Okay'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "dashboard.php";
+            }
+            })
+        
+        
+    }
 
 
 
