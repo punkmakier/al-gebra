@@ -48,6 +48,12 @@
                                 <span> Create Test </span>
                             </a>
                         </li>
+                        <li class="side-nav-item" style="cursor: pointer;" type="button" data-bs-toggle="modal" data-bs-target="#syncTestModal">
+                            <a class="side-nav-link">
+                                <i class="uil-home-alt"></i>
+                                <span> Sync Pretest - Posttest </span>
+                            </a>
+                        </li>
                         <li class="side-nav-item" style="cursor: pointer;" type="button" data-bs-toggle="modal" data-bs-target="#createConceptModal">
                             <a class="side-nav-link">
                                 <i class="uil-home-alt"></i>
@@ -64,7 +70,7 @@
                         <li class="side-nav-item" style="cursor: pointer;">
                             <a class="side-nav-link" href="viewallpretest.php">
                                 <i class="uil-home-alt"></i>
-                                <span> View All Pretest Exam </span>
+                                <span> View All Pre/Post Exam </span>
                             </a>
                         </li>
                         <li class="side-nav-item" style="cursor: pointer;">

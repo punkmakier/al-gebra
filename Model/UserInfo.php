@@ -124,7 +124,6 @@
         public function updateTimeByUser($UserID,$lesson,$concept,$learningtool,$totaltime){
             $con = $this->openConnection();
             $sqlQ = $con->prepare("SELECT * FROM `aitool` WHERE `user_id` = '$UserID' AND `Lesson` = '$lesson' AND `Concept` = '$concept' AND `LearningTool` = '$learningtool'");
-            echo "SELECT * FROM `aitool` WHERE `user_id` = '$UserID' AND `Lesson` = '$lesson' AND `Concept` = '$concept' AND `LearningTool` = '$learningtool'";
             if($sqlQ->execute()){
                 if($sqlQ->rowCount() > 0){
                     while($row = $sqlQ->fetch()){

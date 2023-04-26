@@ -45,6 +45,7 @@
                         $sqlInsertAttempt = $con->prepare("INSERT INTO `student_ans_attempt` (UserID) VALUES ('$this->user_id')");
                         $sqlInsertAttempt->execute();
 
+                        
                         return true;
                     }
 
@@ -57,6 +58,14 @@
             $con = $this->openConnection();
             $sqlQ = $con->prepare("UPDATE users SET `isRegistered` = 1 WHERE `user_id` = '$userID'");
             if($sqlQ->execute()){
+                $sqlInsert1 = $con->prepare("INSERT INTO lessonattempts (UserID, Attempts,Lesson) VALUES('$userID','0','1')");
+                $sqlInsert1->execute();
+                $sqlInsert2 = $con->prepare("INSERT INTO lessonattempts (UserID, Attempts,Lesson) VALUES('$userID','2','2')");
+                $sqlInsert2->execute();
+                $sqlInsert3 = $con->prepare("INSERT INTO lessonattempts (UserID, Attempts,Lesson) VALUES('$userID','2','3')");
+                $sqlInsert3->execute();
+                $sqlInsert4 = $con->prepare("INSERT INTO lessonattempts (UserID, Attempts,Lesson) VALUES('$userID','2','4')");
+                $sqlInsert4->execute();
                 return true;
             }else{
                 return false;

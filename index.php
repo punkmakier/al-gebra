@@ -3,18 +3,19 @@
 
     require_once 'Model/UserAuth.php';
 
-    $userAuth = new UserAuth();
-
-    if(isset($_GET['confirmation']) != ""){
-        $userAuth->completeRegistration($_GET['confirmation']);
-    }
-        session_start();
+   
+    session_start();
     $UserID = $_SESSION['UserID'];
 
     if(isset($UserID)){
         header('Location: dashboard.php');
     }
 
+    $userAuth = new UserAuth();
+
+    if(isset($_GET['confirmation']) != ""){
+        $userAuth->completeRegistration($_GET['confirmation']);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +76,6 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <a href="pages-recoverpw.html" class="text-muted float-end"><small>Forgot your password?</small></a>
                                         <label for="password" class="form-label">Password</label>
                                         <div class="input-group input-group-merge">
                                             <input name="password" type="password" id="password" class="form-control" placeholder="Enter your password" required>

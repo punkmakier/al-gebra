@@ -6,11 +6,12 @@
 
         function showPreTestFunc_question(){
             $con = $this->openConnection();
-            $sqlQ = $con->prepare("SELECT Pretest_id, Lesson, Concept, Question,ChoiceA,ChoiceB,ChoiceC,ChoiceD,CorrectLetterAnswer,CorrectDescAnswer,DateAdded FROM pretest_question");
+            $sqlQ = $con->prepare("SELECT Pretest_id, Lesson, Concept, Question,ChoiceA,ChoiceB,ChoiceC,ChoiceD,CorrectLetterAnswer,CorrectDescAnswer,DateAdded,TestType FROM pretest_question");
             $table = "";
             $table .= "<table class='table table-striped' id='thisTable'>
                 <thead class='bg-primary text-white'>
                     <tr>
+                        <td>Test Type</td>
                         <td>Lesson</td>
                         <td>Concept</td>
                         <td>Question</td>
@@ -27,6 +28,7 @@
             if($sqlQ->execute()){
                 while($row = $sqlQ->fetch()){
                     $table .= "<tr>
+                        <td>".$row['TestType']."</td>
                         <td>".$row['Lesson']."</td>
                         <td>".$row['Concept']."</td>
                         <td>".$row['Question']."</td>

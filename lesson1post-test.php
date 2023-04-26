@@ -65,7 +65,7 @@
                                     <h4 class="page-title">Post-Test</h4>
                                 </div>
                                 
-                                <div class="container-fluid mt-3">            
+                                <div class="container-fluid mt-3">          
                                      <?php $checkpoint = $displayCheckpoint->checkAttempt($UserID);
                                         if($checkpoint == 1){
                                            $displayQuestions->showTestExam("PostTest",1,$UserID,2);

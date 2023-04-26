@@ -1,6 +1,7 @@
  <!-- /End-bar -->
  
  <?php include 'pretest-modal.php'; ?>
+ <?php include 'posttest-modal.php'; ?>
  <?php include 'checkpointexammodal.php'; ?>
  <?php include 'myaccountmodal.php'; ?>
  <?php include 'createconceptmodal.php'; ?>
@@ -70,6 +71,39 @@
 <script>
     $(document).ready(function(){
         $("#thisTable").DataTable();
+
+        $("#syncLesson").on("change", function(){
+            $("#syncData").val($(this).val());
+        })
+
+        $("#syncNow").click(function(){
+            var syncData = $("#syncData").val();
+            $.ajax({
+            url: 'Controller/SyncPostTestExam.php',
+            type: 'POST',
+            data: {Lesson : syncData},
+            success: function(response) {
+                if(response == "Success"){
+                    Swal.fire({
+                    title: 'Success',
+                    text: "Questions has been successfully sync",
+                    icon: 'success',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Okay'
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
+                    })
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+            });
+        })
 
 
    
@@ -228,10 +262,15 @@
             GetTime(useridAud,lessonAud,conceptAud,learningtoolAud);
         })
         $("#visualBTNLM").click(function(){
+            var lessonVisual = $("#LessonIDVisual").val();
+            var conceptVisual = $("#ConceptIDVisual").val();
+            var learningtoolVisual = $("#LearningToolIDVisual").val();
+            var useridVisual = $("#useridIDVisual").val();
             $("#visualLM").show();
-            $("#audioLM").hide();
+            $("#VisualioLM").hide();
             $("#readingLM").hide();
             $("#learningMethod").modal('hide');
+            GetTime(useridVisual,lessonVisual,conceptVisual,learningtoolVisual);
         })
 
     })
@@ -244,7 +283,6 @@
         timer = setInterval(() => {
             sec++;
             if(sec == 5){
-                console.log("push to database")
                 $.ajax({
                     type: "POST",
                     url: "Controller/GetTime.php",
@@ -258,18 +296,6 @@
         }, 1000);
     }
 
-
-    // $("#takePretestExam").on("submit", function(e){
-    //     e.preventDefault();
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "Controller/TakeExam.php",
-    //         data: new FormData($(this).serialize()),
-    //         success: function(response){
-    //             alert(response)
-    //         }
-    //     })
-    // })
 
     $("#submitTestFormConcept11").click(function(){
         var formData = $("#submitExamFormConcept11").serialize()+"&SubmitPretestForm=SubmitPretestForm";
@@ -515,7 +541,6 @@
                         url: "Controller/ScoreChecker.php",
                         data: formData,
                         success: function(response){
-                            alert(response);
                             if(response == "YouPassed"){
                                 sweetAlertMessages('Passed Exam',"Congratulations, you passed the exam.",'success');
                             }
@@ -667,7 +692,6 @@
                         url: "Controller/ScoreChecker.php",
                         data: formData,
                         success: function(response){
-                            alert(response);
                             if(response == "YouPassed"){
                                 sweetAlertMessages('Passed Exam',"Congratulations, you passed the exam.",'success');
                             }
@@ -816,7 +840,6 @@
                         url: "Controller/ScoreChecker.php",
                         data: formData,
                         success: function(response){
-                            alert(response);
                             if(response == "YouPassed"){
                                 sweetAlertMessages('Passed Exam',"Congratulations, you passed the exam.",'success');
                             }

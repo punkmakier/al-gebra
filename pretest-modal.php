@@ -13,9 +13,7 @@
                                     <div class="mb-3">
                                         <label for="fullname" class="form-label">Type of Test <span class="text-danger">*</span></label>
                                         <select class="form-select mb-3" name="TestType">
-                                            <option selected>- Select -</option>
                                             <option value="PreTest">Pre-test</option>
-                                            <option value="PostTest">Post-test</option>
                                         </select> 
                                     </div>
                                 </div>

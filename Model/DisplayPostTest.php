@@ -14,7 +14,7 @@ class DisplayPostTest extends config{
         if($sqlQ->rowCount() > 0){
             $count = 1;
             while($row = $sqlQ->fetch()){
-                $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt'");
+                $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt' AND TestType = '$TestType'");
                 $sqlCheck->execute();
                 if($sqlCheck->rowCount() == 0){
                     echo "<form id='submitExamFormConcept1$count'>
@@ -93,7 +93,7 @@ class DisplayPostTest extends config{
             $count = 1;
 
             while($row = $sqlQ->fetch()){
-                $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt'");
+                $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt' AND TestType = '$TestType'");
                 $sqlCheck->execute();
                 if($sqlCheck->rowCount() == 0){
                     echo "<form id='submitExamFormConcept2$count'>
@@ -169,7 +169,7 @@ class DisplayPostTest extends config{
         if($sqlQ->rowCount() > 0){
             $count = 1;
             while($row = $sqlQ->fetch()){
-                $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt'");
+                $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt' AND TestType = '$TestType'");
                 $sqlCheck->execute();
                 if($sqlCheck->rowCount() == 0){
                     echo "<form id='submitExamFormConcept3$count'>
@@ -245,7 +245,7 @@ class DisplayPostTest extends config{
         if($sqlQ->rowCount() > 0){
             $count = 1;
             while($row = $sqlQ->fetch()){
-                $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt'");
+                $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt' AND TestType = '$TestType'");
                 $sqlCheck->execute();
                 if($sqlCheck->rowCount() == 0){
                     echo "<form id='submitExamFormConcept4$count'>
@@ -322,7 +322,7 @@ class DisplayPostTest extends config{
         if($sqlQ->rowCount() > 0){
             $count = 1;
             while($row = $sqlQ->fetch()){
-                $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt'");
+                $sqlCheck = $con->prepare("SELECT * FROM student_answers WHERE `Pretest_id` = '".$row['Pretest_id']."' AND `Student_id`='$UserID' AND `Attempt` = '$Attempt' AND TestType = '$TestType'");
                 $sqlCheck->execute();
                 if($sqlCheck->rowCount() == 0){
                     echo "<form id='submitExamFormConcept5$count'>

@@ -101,7 +101,10 @@
                                     ?>
                                 </div>
                                 <div class="container-fluid mt-2 text-center" id="visualLM" style="display:none;">
-                      
+                                    <input type="hidden" value="1" id="LessonIDVisual">
+                                    <input type="hidden" value="1" id="ConceptIDVisual">
+                                    <input type="hidden" value="Visual" id="LearningToolIDVisual">
+                                    <input type="hidden" value="<?php echo $_SESSION['UserID'] ?>" id="useridIDVisual">
                                     <?php $checkpoint = $displayCheckpoint->checkAttempt($UserID);
                                         if($checkpoint == 1){
                                            $showConcept->showConcept(1,1,3,2);

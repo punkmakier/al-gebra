@@ -168,6 +168,7 @@
                     contentType: false,
                     processData: false,
                     success: function(response) {
+                        alert(response)
                         if(response == 'Incorrect'){
                             $("#message").addClass("alert-danger");
                             $("#message").text("Passwors and Confirm Password did not match");
